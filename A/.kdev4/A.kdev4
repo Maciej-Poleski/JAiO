@@ -1,16 +1,34 @@
-[Buildset]
-BuildItems=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x01\x00\x00\x00\x02\x00A)
-
 [CMake]
 Build Directory Count=1
-CMakeDir=/usr/share/cmake/Modules
 Current Build Directory Index=0
 ProjectRootRelative=./
 
 [CMake][CMake Build Directory 0]
-Build Directory Path=file:///home/studia/projects/JAiO/A/build
+Build Directory Path=file:///home/evil/Studia/Przedmioty/JAiO/A/build
 Build Type=Debug
 CMake Binary=file:///usr/bin/cmake
-Environment Profile=
-Extra Arguments=-DDEBUG=Yes
-Install Directory=
+Environment Profile=satori
+Extra Arguments=DEBUG=yes
+Install Directory=file:///usr/local
+
+[Launch]
+Launch Configurations=Launch Configuration 0
+
+[Launch][Launch Configuration 0]
+Configured Launch Modes=execute
+Configured Launchers=nativeAppLauncher
+Name=satori
+Type=Native Application
+
+[Launch][Launch Configuration 0][Data]
+Debugger Shell=
+Dependencies=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x02\x00\x00\x00\x02\x00A\x00\x00\x00\x0c\x00s\x00a\x00t\x00o\x00r\x00i)
+Dependency Action=Build
+Display Demangle Names=true
+Display Static Members=false
+GDB Path=
+Project Target=A,satori
+Remote GDB Config Script=
+Remote GDB Run Script=
+Remote GDB Shell Script=
+Start With=ApplicationOutput

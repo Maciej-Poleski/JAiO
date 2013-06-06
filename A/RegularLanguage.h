@@ -1,4 +1,4 @@
-#include <string>
+#include <memory>
 
 struct Node;
 
@@ -22,6 +22,9 @@ public:
 
     std::string ToString() const; // wypisuje wyrażenie opisujące, bez zbędnych nawiasów
     // i maksymalnie uproszczone (a** = a*, a + 0 = a, a1 = a, a0 = 0, 0* = 1, 1* = 1).
+
+private:
+    RegularLanguage(std::shared_ptr<const Node> node);
     
 private:
     std::shared_ptr<const Node> _node;
