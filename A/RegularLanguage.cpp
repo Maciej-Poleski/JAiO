@@ -684,8 +684,8 @@ public:
 
 private:
     std::size_t integerFromState(State *state);
-    uint32_t detStateFromStateSet(uint64_t stateSet);
-    uint64_t stateSetFromStateSet(const std::unordered_set<State*> &set);
+    uint32_t detStateFromStateSet(std::vector<bool> stateSet);
+    std::vector<bool> stateSetFromStateSet(const std::unordered_set<State*> &set);
     void removeNotReachable();
     void markReachable(std::size_t v, std::vector< std::uint32_t >& fromOldIdToNewId, std::size_t& nextId) const;
 
@@ -695,7 +695,7 @@ private:
     std::unordered_map<State*,size_t> stateToInteger;
     std::size_t nextIntegerFromState;
     std::vector<State*> stateByInteger;
-    std::unordered_map<uint64_t,uint32_t> stateSetToDetState;
+    std::unordered_map<std::vector<bool>,uint32_t> stateSetToDetState;
     // Wygląda na to, że w kompilatorze jest błąd. push_back na takim wektorze
     // składającym się z rzeczywistych obiektów powoduje dealokacje pamięci.
     // Jako obejście przechowuję w wektorze wskaźnik na rzeczywisty obiekt
@@ -706,8 +706,8 @@ private:
 
 void DFAMaker::makeDFA()
 {
-    std::stack<uint64_t> detStatesToFollow;
-    uint64_t t=0;
+    std::stack<std::vector<bool>> detStatesToFollow;
+    std::vector<bool> t;
     {
         const std::vector<State*> &startStates=nfa->getStartStates();
         std::unordered_set<State*> set;
@@ -715,14 +715,14 @@ void DFAMaker::makeDFA()
         {
             travelByNull(set,*i);
         }
-        t|=stateSetFromStateSet(set);
+        t=stateSetFromStateSet(set);
     }
     detStatesToFollow.push(t);
-    std::unordered_set<uint64_t> stateSetEnqueued;
+    std::unordered_set<std::vector<bool>> stateSetEnqueued;
     stateSetEnqueued.insert(t);
     while(!detStatesToFollow.empty())
     {
-        uint64_t stateSet=detStatesToFollow.top();
+        std::vector<bool> stateSet=detStatesToFollow.top();
         detStatesToFollow.pop();
         uint32_t detState=detStateFromStateSet(stateSet);
 
@@ -731,12 +731,12 @@ void DFAMaker::makeDFA()
             std::unordered_set<State*> set;
             for(size_t i=0; i<NFASize; ++i)
             {
-                if((1UL<<i) & stateSet)
+                if(i<stateSet.size() && stateSet[i])
                 {
                     travelByChar(set,stateByInteger[i],'a');
                 }
             }
-            uint64_t a=stateSetFromStateSet(set);
+            auto a=stateSetFromStateSet(set);
             if(stateSetEnqueued.find(a)==stateSetEnqueued.end())
             {
                 detStatesToFollow.push(a);
@@ -752,12 +752,12 @@ void DFAMaker::makeDFA()
             std::unordered_set<State*> set;
             for(size_t i=0; i<NFASize; ++i)
             {
-                if((1UL<<i) & stateSet)
+                if(i<stateSet.size() && stateSet[i])
                 {
                     travelByChar(set,stateByInteger[i],'b');
                 }
             }
-            uint64_t b=stateSetFromStateSet(set);
+            auto b=stateSetFromStateSet(set);
             if(stateSetEnqueued.find(b)==stateSetEnqueued.end())
             {
                 detStatesToFollow.push(b);
@@ -781,7 +781,7 @@ size_t DFAMaker::integerFromState(State* state)
     return stateToInteger[state]=nextIntegerFromState++;
 }
 
-uint32_t DFAMaker::detStateFromStateSet(const uint64_t stateSet)
+uint32_t DFAMaker::detStateFromStateSet(const std::vector<bool> stateSet)
 {
     check(NFASize<=64);
     check(stateByInteger.size()==nextIntegerFromState);
@@ -790,7 +790,7 @@ uint32_t DFAMaker::detStateFromStateSet(const uint64_t stateSet)
     bool terminal=false;
     for(size_t i=0; i<NFASize; ++i)
     {
-        if((1UL<<i) & stateSet)
+        if(i<stateSet.size() && stateSet[i])
         {
             check(i<nextIntegerFromState);
             if(nfa->isTerminal(stateByInteger[i]))
@@ -806,12 +806,13 @@ uint32_t DFAMaker::detStateFromStateSet(const uint64_t stateSet)
 }
 
 
-uint64_t DFAMaker::stateSetFromStateSet(const std::unordered_set< State* >& set)
+std::vector<bool> DFAMaker::stateSetFromStateSet(const std::unordered_set< State* >& set)
 {
-    uint64_t result=0;
+    std::vector<bool> result;
     for(std::unordered_set< State* >::const_iterator i=set.begin(),e=set.end(); i!=e; ++i)
     {
-        result|= (1UL<<integerFromState(*i));
+        result.reserve(integerFromState(*i)+1);
+        result[integerFromState(*i)]=true;
     }
     return result;
 }
@@ -873,7 +874,7 @@ void DFAMaker::minimalize()
         a.swap(stateToInteger);
         std::vector<State*> b;
         stateByInteger.swap(b);
-        std::unordered_map<uint64_t,uint32_t> c;
+        std::unordered_map<std::vector<bool>,uint32_t> c;
         stateSetToDetState.swap(c);
     }
     removeNotReachable();       // probably redundant
