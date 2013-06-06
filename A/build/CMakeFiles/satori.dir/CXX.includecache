@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/studia/projects/JAiO/A/RegularLanguage.cpp
+cstdint
+-
+memory
+-
+stdexcept
+-
+RegularLanguage.h
+/home/studia/projects/JAiO/A/RegularLanguage.h
+
+/home/studia/projects/JAiO/A/RegularLanguage.h
+string
+-
+

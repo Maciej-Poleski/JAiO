@@ -1,0 +1,1 @@
+/home/studia/projects/JAiO/A/build/CMakeFiles/satori.dir
