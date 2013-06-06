@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++11    CMakeFiles/satori.dir/RegularLanguage.cpp.o CMakeFiles/satori.dir/satori.cxx.o  -o satori -rdynamic 
