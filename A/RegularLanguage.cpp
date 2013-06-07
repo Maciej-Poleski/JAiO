@@ -5,13 +5,15 @@
 
 #include "RegularLanguage.h"
 
+#define override
+
 namespace
 {
 class NFA;
 
 typedef std::shared_ptr<NFA> NFAPtr;
 
-class CharProvider final
+class CharProvider
 {
 public:
     CharProvider(const std::string &string);
@@ -20,10 +22,10 @@ public:
 
 private:
     const std::string _string;
-    std::size_t _i=0;
+    std::size_t _i;
 };
 
-CharProvider::CharProvider(const std::string& string) :_string(string)
+CharProvider::CharProvider(const std::string& string) :_string(string), _i(0)
 {
 }
 
