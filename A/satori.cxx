@@ -16,6 +16,14 @@ int main(int argc, char** argv)
     {
         std::cout<<"Zgodnie z oczekiwaniami: "<<e.what()<<'\n';
     }
+    try {
+        RegularLanguage a("ababab+a(a+)b");
+        std::cout<<"Błąd: "<<a.ToString()<<'\n';
+    }
+    catch(const std::invalid_argument &e)
+    {
+        std::cout<<"Zgodnie z oczekiwaniami: "<<e.what()<<'\n';
+    }
     RegularLanguage b("b+0*");
     std::cout<<b.ToString()<<'\n';
     {
@@ -27,7 +35,11 @@ int main(int argc, char** argv)
     std::cout << d.ToString() << std::endl; // wypisuje "(a*(b+1))*"
     std::cout<<RegularLanguage("(a*b)*(a*(a*b)*)*").ToString()<<'\n';
     std::cout << (d == RegularLanguage("(a*b)*(a*(a*b)*)*")) << std::endl; // wypisuje "1"
-//     std::cout << (RegularLanguage("bb") <= RegularLanguage("(a+b(ab*a)*b)*")) << std::endl; // wypisuje "1"
+     std::cout << (RegularLanguage("bb") <= RegularLanguage("(a+b(ab*a)*b)*")) << std::endl; // wypisuje "1"
+     std::cout<<(RegularLanguage("a+b")==RegularLanguage("a"))<<'\n';
+     std::cout<<(RegularLanguage("a+b")<=RegularLanguage("a"))<<'\n';
+     std::cout<<(RegularLanguage("a")<=RegularLanguage("a+b"))<<'\n';
+
     return 0;
 }
 

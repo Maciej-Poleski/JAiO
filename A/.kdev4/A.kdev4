@@ -11,8 +11,8 @@ Build Directory Path=file:///home/evil/Studia/Przedmioty/JAiO/A/build
 Build Type=Debug
 CMake Binary=file:///usr/bin/cmake
 Environment Profile=satori
-Extra Arguments=DEBUG=yes
-Install Directory=file:///usr/local
+Extra Arguments=
+Install Directory=
 
 [Launch]
 Launch Configurations=Launch Configuration 0

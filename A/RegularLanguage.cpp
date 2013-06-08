@@ -19,6 +19,7 @@ public:
     CharProvider(const std::string &string);
 
     bool accept(char c);
+    bool atEnd();
 
 private:
     const std::string _string;
@@ -41,6 +42,14 @@ bool CharProvider::accept(char c)
     else
         return false;
 }
+
+bool CharProvider::atEnd()
+{
+    while(_i<_string.length() && _string[_i]==' ')
+        ++_i;
+    return _i==_string.length();
+}
+
 };
 
 struct Node
@@ -358,10 +367,12 @@ RegularLanguage::RegularLanguage(const std::string& regExp)
     {
         CharProvider cp(regExp);
         _node=parseSum(cp);
+        if(!cp.atEnd())
+            throw std::invalid_argument("Nie udało się sparsować całego napisu");
     }
     catch(int)
     {
-        throw std::invalid_argument("");
+        throw std::invalid_argument("Nie sparowane nawiasy");
     }
 }
 
@@ -733,7 +744,7 @@ void DFAMaker::makeDFA()
             std::unordered_set<State*> set;
             for(size_t i=0; i<NFASize; ++i)
             {
-                if(i<stateSet.size() && stateSet[i])
+                if(stateSet[i])
                 {
                     travelByChar(set,stateByInteger[i],'a');
                 }
@@ -754,7 +765,7 @@ void DFAMaker::makeDFA()
             std::unordered_set<State*> set;
             for(size_t i=0; i<NFASize; ++i)
             {
-                if(i<stateSet.size() && stateSet[i])
+                if(stateSet[i])
                 {
                     travelByChar(set,stateByInteger[i],'b');
                 }
@@ -810,10 +821,9 @@ uint32_t DFAMaker::detStateFromStateSet(const std::vector<bool> stateSet)
 
 std::vector<bool> DFAMaker::stateSetFromStateSet(const std::unordered_set< State* >& set)
 {
-    std::vector<bool> result;
+    std::vector<bool> result(NFASize);
     for(std::unordered_set< State* >::const_iterator i=set.begin(),e=set.end(); i!=e; ++i)
     {
-        result.reserve(integerFromState(*i)+1);
         result[integerFromState(*i)]=true;
     }
     return result;
@@ -1008,5 +1018,5 @@ bool operator!=(const RegularLanguage& a, const RegularLanguage& b)
 
 bool operator<=(const RegularLanguage& a, const RegularLanguage& b)
 {
-    return a==b;
+    return a+b==b;
 }
