@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+        <title>Języki, Automaty i Obliczenia - Przedmioty - Uniwersytet Jagielloński w Krakowie</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="https://www.usosweb.uj.edu.pl/favicon.ico">
+        <link rel="stylesheet" href="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/dziekanat.css">
+<link rel="stylesheet" href="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/jquery.css">
+
+        <script src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/jquery-1.js"></script>
+<script type="text/javascript" src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/jquery-ui-1.js"></script>
+<script type="text/javascript" src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/common.js"></script>
+
+        <script type="text/javascript">
+            /* globals */
+            sys_www_path="https://www.usosweb.uj.edu.pl/";
+            lang="pl";
+        </script>
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2780649-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+    </head>
+
+    <body marginheight="0" marginwidth="0">
+
+                                <div class="do_not_print"><style>a.casmenu, a.casmenu:visited, a.casmenu:active { cursor: pointer; color: #fff; text-decoration: none } a.casmenu:hover { color: #fff; text-decoration: underline } b.casmenu { color: #fff; font-weight: bold } #casmenu td { color: #aaa; } </style><div style="margin: 0; padding: 0; border: 0; width: 100%; height: 27px; background: #333; color: #aaa; font-family: Arial; font-size: 11px; font-weight: normal; text-decoration: none; text-align: left; border-bottom: 1px dashed #888" id="casmenu"><table style="margin: 0; width: 100%" cellpadding="0" cellspacing="0"><tbody><tr><td style="white-space: nowrap; padding: 6px 0 0 8px; line-height: normal; text-align: left; font-family: Tahoma; font-size: 11px"><b class="casmenu">Uniwersytet Jagielloński w Krakowie</b> - Punkt Logowania</td><td style="white-space: nowrap; padding: 6px 8px 0 6px; line-height: normal; text-align: right; font-family: Tahoma; font-size: 11px"><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:dodatki/poczta%28%29" class="poczta" style="background: url('/img/uj/icons/Mail16x16.png'); background-repeat: no-repeat; background-position: 0 0px; padding: 0 0 0 22px; margin: 0; font-family: Arial; font-size: 11px; font-weight: bold; color: #FFF">moja POCZTA UJ </a> | <!-- _*UJ_CAS_ZALOGOWANY*_ -->Zalogowany użytkownik: <b class="casmenu">Maciej Poleski</b> | <a href="https://login.uj.edu.pl/?tab=zmianaHasla&amp;locale=pl&amp;url=https%3A%2F%2Fwww.usosweb.uj.edu.pl%2Fkontroler.php%3F_action%3Dactionx%3Akatalog2%2Fprzedmioty%2FpokazPrzedmiot%28prz_kod%3AWMI.TCS.JAO.OL%29" class="casmenu">zmień hasło</a> | <a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:logowaniecas/wyloguj%28%29" class="casmenu">wyloguj się</a></td></tr></tbody></table></div></div>
+        
+        <div id="layout-container">
+        <div style="width: 350px; top: 537px; left: 957px; display: none;" id="wrpopup">Jesteś już zarejestrowany. Nie możesz się wyrejestrować.</div>
+
+        
+        <table id="layout-t" cellpadding="0" cellspacing="0">
+            <tbody><tr id="layout-r1" class="do_not_print">
+                <td id="layout-c11"><img class="homelink" src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/kontroler.png"></td>
+                <td id="layout-c12">
+                    <table id="layout-c12-t" cellpadding="0" cellspacing="0">
+                        <tbody><tr><td class="a"><div>
+                                                                                        <a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx%3Akatalog2%2Fprzedmioty%2FpokazPrzedmiot%28prz_kod%3AWMI.TCS.JAO.OL%29&amp;lang=2" class="lang"><img alt="In English" src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/flag_en.png"></a>
+                                                    </div></td></tr>
+                        <tr><td class="m">
+                            <a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:news/default%28file:newsy.html%29" onclick="return Common.confirmWarnings();">AKTUALNOŚCI</a> <a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/index%28%29" onclick="return Common.confirmWarnings();" class=" highlighted">KATALOG</a> <a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:home/index%28%29" onclick="return Common.confirmWarnings();">MÓJ USOSWEB</a> <a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:dla_stud/index%28%29" onclick="return Common.confirmWarnings();">DLA STUDENTÓW</a> <a href='javascript:alert("Ta%20cz%C4%99%C5%9B%C4%87%20serwisu%20jest%20dost%C4%99pna%20tylko%20dla%20pracownik%C3%B3w.")' class=" greyed">DLA PRACOWNIKÓW</a> <a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:dodatki/index%28%29" onclick="return Common.confirmWarnings();">MODUŁY DODATKOWE</a> <a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:news/pomoc/index%28%29" onclick="return Common.confirmWarnings();">POMOC</a> <a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:news/kontakt%28%29" onclick="return Common.confirmWarnings();">KONTAKT</a> 
+                        </td></tr>
+                    </tbody></table>
+                </td>
+            </tr>
+            <tr>
+                <td id="layout-c21" class="do_not_print">
+                    <div class="item level1"><div class="bigarrow"></div><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/index%28%29" onclick="return Common.confirmWarnings();">INDEKS</a></div><div class="item level1"><div class="bigarrow"></div><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/osoby/index%28%29" onclick="return Common.confirmWarnings();">STUDENCI, PRACOWNICY</a></div><div class="item level1"><div class="bigarrow"></div><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/jednostki/index%28%29" onclick="return Common.confirmWarnings();">JEDNOSTKI ORGANIZACYJNE</a></div><div class="item level1"><div class="bigarrow"></div><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/index%28%29" onclick="return Common.confirmWarnings();">PRZEDMIOTY</a></div><div class="subitems"><div class="item level2"><span class=" highlighted">Języki, Automaty i Obliczenia</span></div><div class="subitems"></div></div><div class="item level1"><div class="bigarrow"></div><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/programy/index%28%29" onclick="return Common.confirmWarnings();">STUDIA</a></div><div class="item level1"><div class="bigarrow"></div><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/sale/index%28%29" onclick="return Common.confirmWarnings();">SALE</a></div><div class="item level1"><div class="bigarrow"></div><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/akademiki/index%28%29" onclick="return Common.confirmWarnings();">AKADEMIKI</a></div><div class="item level1"><div class="bigarrow"></div><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/pomoc%28%29" onclick="return Common.confirmWarnings();">POMOC</a></div>
+                </td>
+                <td id="layout-c22">
+                    <span id="jsdebug"></span>
+                                                            <span class="wrtext">
+
+
+	<style>
+		td.userhtml { width: 600px; }
+	</style>
+
+
+<div style="float:right"><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/pomoc%28section:przedmioty%29" onclick="return Common.confirmWarnings();"><img title="katalog przedmiotów - pomoc" alt="katalog przedmiotów - pomoc" src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/pom.gif"></a></div>
+
+<h1>Języki, Automaty i Obliczenia</h1>
+
+
+
+<h2>Informacje ogólne</h2>
+
+<table class="grey" cellspacing="1px">
+	<tbody><tr>
+		<td class="strong" style="text-align: right">Kod przedmiotu:</td>
+		<td class="data">WMI.TCS.JAO.OL</td>
+		<td class="strong" style="text-align: right">Kod Erasmus:</td>
+		<td class="data">
+							.
+				<img style="vertical-align: middle" src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/tip_info.gif" onmouseout="Common.popupOff()" onmouseover="Common.popupOn(this, 'Kod klasyfikacyjny przedmiotu składa się z trzech do pięciu cyfr, przy czym trzy 						pierwsze oznaczają klasyfikację dziedziny wg. <em>Listy kodów 						dziedzin</em> obowiązującej w programie Socrates/Erasmus, czwarta(dotąd na ogół 0) 						- ewentualne uszczegółowienie informacji o dyscyplinie, piąta - stopień 						zaawansowania przedmiotu ustalony na podstawie roku studiów, dla którego 						przedmiot jest przeznaczony.', 400, false,26)">					</td>
+	</tr>
+	<tr class="strong">
+					<td class="strong" style="text-align: right">Nazwa przedmiotu:</td>
+			<td class="data" colspan="3">Języki, Automaty i Obliczenia</td>
+			</tr>
+	<tr>
+		<td class="strong" style="text-align: right">Jednostka:</td>
+		<td class="data" colspan="3">
+			<a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/jednostki/pokazJednostke%28kod:UJ.WMI.ZK%29" onclick="return Common.confirmWarnings();">Zespół Katedr i Zakładów Informatyki Matematycznej</a>		</td>
+	</tr>
+	<tr class="strong">
+		<td class="strong" style="text-align: right">Grupy:</td>
+		<td class="data" colspan="3">
+					</td>
+	</tr>
+		<tr>
+		<td class="strong" style="text-align: right">Punkty ECTS i inne:</td>
+		<td class="data" colspan="3">
+							 6.00 													<img style="vertical-align: middle" src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/tip_info.gif" onmouseout="Common.popupOff()" onmouseover="Common.popupOn(this, 'Podstawowe informacje o zasadach przyporządkowania punktów ECTS:<br> 					- roczny wymiar godzinowy nakładu pracy studenta konieczny do 					osiągnięcia zakładanych efektów uczenia się dla danego etapu 					studiów wynosi 1500-1800 h, co odpowiada 60 ECTS;<br> 					- tygodniowy wymiar godzinowy nakładu pracy studenta wynosi 45 h;<br> 					- 1 punkt ECTS odpowiada 25-30 godzinom pracy studenta potrzebnej 					do osiągnięcia zakładanych efektów uczenia się;<br> 					- tygodniowy nakład pracy studenta konieczny do osiągnięcia zakładanych 					efektów uczenia się pozwala uzyskać 1,5 ECTS;<br> 					- nakład pracy potrzebny do zaliczenia przedmiotu, któremu przypisano 					3 ECTS, stanowi 10% semestralnego obciążenia studenta.', 400, false,26)">										<br>
+				<a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/regulyPunktacjiPrzedmiotu%28prz_kod:WMI.TCS.JAO.OL%29" onclick="return Common.confirmWarnings();" class="wrgrey"><img src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/skocz.gif" style="padding: 2px 4px 0 0;"></a><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/regulyPunktacjiPrzedmiotu%28prz_kod:WMI.TCS.JAO.OL%29" onclick="return Common.confirmWarnings();" class="wrgrey">zobacz reguły punktacji</a>					</td>
+	</tr>
+	<tr class="strong">
+		<td class="strong" style="text-align: right">Język prowadzenia:</td>
+		<td class="data" colspan="3">
+			<span class="note">(brak danych)</span>
+		</td>
+	</tr>
+							</tbody></table>
+
+
+	<h2>
+		Zajęcia w cyklu
+		<i>"Semestr letni 2012/2013"</i>
+		<span class="note">
+																			(zakończony)
+					</span>
+	</h2>
+	<table class="grey" cellspacing="1px">
+		<tbody><tr>
+			<td class="strong" style="text-align: right">Okres:</td>
+			<td class="data" style="vertical-align:middle">
+				2013-02-23 - 2013-06-14
+			</td>
+									<td style="background: #ffffff; text-align: right; padding: 8px 10px; border: 2px solid #aaa; " rowspan="7">
+				<div style="background:#eee; border: 1px solid #ccc; padding: 3px 5px; margin-bottom:10px;text-align:center">
+					
+	
+				
+	
+
+<span style="white-space:nowrap">
+						<img style="vertical-align: middle" src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/koszyk_v_green.gif" onmouseout="Common.popupOff()" onmouseover="Common.popupOn(this, 'Jesteś już zarejestrowany. Nie możesz się wyrejestrować.', 350, false,26)">				<a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/rejestracjaNaPrzedmiotCyklu%28prz_kod:WMI.TCS.JAO.OL;cdyd_kod:12@12f13L;callback:g_c4e033f1%29" onclick="return Common.confirmWarnings();"><img style="vertical-align: middle" src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/greyinfolink.gif" onmouseout="Common.popupOff()" onmouseover="Common.popupOn(this, 'szczegóły...', 70, false,26)"></a></span>				</div>
+				<script type="text/javascript">function RegisterServlet_division_sel() {
+   var params = {};
+params['prz_kod'] = 'WMI.TCS.JAO.OL';   Common.servletRegister('division_sel', 'katalog2/przedmioty/pokazPrzedmiot', params);
+}
+RegisterServlet_division_sel();
+</script><div class="do_not_print" style="white-space: nowrap" align="left"><form><b>Wybrany podział planu:</b><br><input id="g_7f45262a" class="radio " name="division" style="vertical-align:middle;margin-left:0" value="week" onchange="" onclick="Common.servletUpdateParam('division_sel', 'division', 'week'); Common.servletPostback('division_sel');" type="radio"> <label for="g_7f45262a">ten tydzień</label><br><input id="g_03da0787" class="radio " name="division" style="vertical-align:middle;margin-left:0" value="semester" onchange="" onclick="Common.servletUpdateParam('division_sel', 'division', 'semester'); Common.servletPostback('division_sel');" checked="checked" type="radio"> <label for="g_03da0787">cykl przedmiotu</label></form></div><br>
+				<a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/pokazPlanZajecPrzedmiotu%28prz_kod:WMI.TCS.JAO.OL;cdyd_kod:12@12f13L;division:semester%29" onclick="return Common.confirmWarnings();"><img alt="powiększ" src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/kontroler.gif" style="margin-bottom:3px"></a>				<br>
+				<a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/pokazPlanZajecPrzedmiotu%28prz_kod:WMI.TCS.JAO.OL;cdyd_kod:12@12f13L;division:semester%29" onclick="return Common.confirmWarnings();" class="wrgrey"><img src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/magnify.gif" style="padding: 0 3px 0 1px;vertical-align: middle;"></a><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/pokazPlanZajecPrzedmiotu%28prz_kod:WMI.TCS.JAO.OL;cdyd_kod:12@12f13L;division:semester%29" onclick="return Common.confirmWarnings();" class="wrgrey">zobacz plan zajęć</a>			</td>
+		</tr>
+		<tr class="strong">
+			<td class="strong" style="text-align: right">Typ zajęć:</td>
+			<td class="data">
+															Ćwiczenia, 30 godzin												<a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/pokazGrupyZajec%28zaj_cyk_id:255259%29" onclick="return Common.confirmWarnings();"><img src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/skocz.gif" style="padding: 2px 4px 0 0;"></a><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/pokazGrupyZajec%28zaj_cyk_id:255259%29" onclick="return Common.confirmWarnings();">więcej informacji</a>						<br>
+											Wykład, 30 godzin												<a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/pokazGrupyZajec%28zaj_cyk_id:255260%29" onclick="return Common.confirmWarnings();"><img src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/skocz.gif" style="padding: 2px 4px 0 0;"></a><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/pokazGrupyZajec%28zaj_cyk_id:255260%29" onclick="return Common.confirmWarnings();">więcej informacji</a>						<br>
+												</td>
+		</tr>
+		<tr>
+			<td class="strong" style="text-align: right">Koordynatorzy:</td>
+			<td class="data">
+															<a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/osoby/pokazOsobe%28os_id:42%29" onclick="return Common.confirmWarnings();">Paweł Idziak</a>												</td>
+		</tr>
+		<tr class="strong">
+			<td class="strong" style="text-align: right">Prowadzący grup:</td>
+			<td class="data">
+															<a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/osoby/pokazOsobe%28os_id:42%29" onclick="return Common.confirmWarnings();">Paweł Idziak</a>, 											<a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/osoby/pokazOsobe%28os_id:572%29" onclick="return Common.confirmWarnings();">Michał Staromiejski</a>												</td>
+		</tr>
+					<tr>
+				<td class="strong" style="text-align: right">Strona przedmiotu:</td>
+				<td class="data">
+					<a href="http://pegaz.uj.edu.pl/course/view.php?id=124952">http://pegaz.uj.edu.pl/course/view.php?id=124952</a>
+				</td>
+			</tr>
+				<tr class="strong">
+			<td class="strong" style="text-align: right">Lista&nbsp;studentów:</td>
+			<td class="data">
+									<span class="note">
+						(nie masz dostępu)
+					</span>
+							</td>
+		</tr>
+		<tr>
+			<td class="strong" style="text-align: right">Zaliczenie:</td>
+			<td class="data">
+									Egzamin
+							</td>
+		</tr>
+
+									<tr class="strong">
+					<td class="strong" style="text-align: right; vertical-align: top">Efekty kształcenia:</td>
+					<td class="data" colspan="2"><p style="margin:0px 0px 6px 0px">W efekcie zajęć student powinien znać:</p>
+<p style="margin:20px 0px 6px 0px">- podstawy teorii automatów i języków formalnych</p>
+<p style="margin:20px 0px 6px 0px">- podstawowe typy formalnych modeli obliczeń i zależności między nimi</p>
+<p style="margin:20px 0px 6px 0px">W efekcie zajęć student powinien umieć:</p>
+<p style="margin:20px 0px 6px 0px">- opisać zależności pomiędzy automatami skończonymi i gramatykami</p>
+<p style="margin:20px 0px 6px 0px">- wyjaśnić teoretyczne i praktyczne znaczenie formalnych modeli obliczeń</p>
+<p style="margin:20px 0px 6px 0px">- rozróżniać problemy obliczalne i nieobliczalne<br></p>
+</td>
+				</tr>
+												<tr>
+					<td class="strong" style="text-align: right; vertical-align: top">Ocena wliczana do średniej:</td>
+					<td class="data" colspan="2"><p style="margin:0px 0px 6px 0px">tak<br></p>
+</td>
+				</tr>
+												<tr class="strong">
+					<td class="strong" style="text-align: right; vertical-align: top">Forma i warunki zaliczenia:</td>
+					<td class="data" colspan="2"><p style="margin:0px 0px 6px 0px"><span style="white-space: pre"> </span><br></p>
+</td>
+				</tr>
+												<tr>
+					<td class="strong" style="text-align: right; vertical-align: top">Grupa treści kształcenia:</td>
+					<td class="data" colspan="2"><p style="margin:0px 0px 6px 0px">Grupa treści kierunkowych<br></p>
+</td>
+				</tr>
+												<tr class="strong">
+					<td class="strong" style="text-align: right; vertical-align: top">Metody dydaktyczne - słownik:</td>
+					<td class="data" colspan="2"><p style="margin:0px 0px 6px 0px">Metody podające - objaśnienie lub wyjaśnienie<br></p>
+</td>
+				</tr>
+												<tr>
+					<td class="strong" style="text-align: right; vertical-align: top">Metody dydaktyczne:</td>
+					<td class="data" colspan="2"><p style="margin:0px 0px 6px 0px"><span style="white-space: pre"> </span><br></p>
+</td>
+				</tr>
+												<tr class="strong">
+					<td class="strong" style="text-align: right; vertical-align: top">Prerekwizyt:</td>
+					<td class="data" colspan="2"><p style="margin:0px 0px 6px 0px"><a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/pokazPrzedmiot%28prz_kod:WMI.TCS.WM.OL%29" onclick="return Common.confirmWarnings();">Wstęp do Matematyki</a>&nbsp;<span class="note">WMI.TCS.WM.OL</span><br></p>
+</td>
+				</tr>
+												<tr>
+					<td class="strong" style="text-align: right; vertical-align: top">Wymagania wstępne:</td>
+					<td class="data" colspan="2"><p style="margin:0px 0px 6px 0px"><span style="white-space: pre"> </span><br></p>
+</td>
+				</tr>
+					
+
+		
+		<tr class="strong">
+		<td class="strong" style="text-align: right">
+			<img style="vertical-align: middle" src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/tip_info.gif" onmouseout="Common.popupOff()" onmouseover="Common.popupOn(this, 'Pegaz jest uniwersytecką platformą zdalnego nauczania.', 300, false,26)">			Kurs na Pegazie:
+		</td>
+		<td class="data" colspan="2">
+			
+																										
+							<a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/pokazGrupyZajec%28zaj_cyk_id:255259%29" onclick="return Common.confirmWarnings();">Ćwiczenia - pokaż na stronie grup</a>							<br>
+																																									<img style="vertical-align: middle" src="J%C4%99zyki,%20Automaty%20i%20Obliczenia%20-%20Przedmioty%20-%20Uniwersytet%20Jagiello%C5%84ski%20w%20Krakowie_pliki/tip_info.gif" onmouseout="Common.popupOff()" onmouseover="Common.popupOn(this, 'Masz dostęp do zasobów kursu, ponieważ jesteś zapisany do grupy.', 300, false,26)">							<a href="http://pegaz.uj.edu.pl/course/usos.php?zaj_cyk_id=255260&amp;gr_nr=1">Wykład - grupa nr 1</a>
+							<br>
+																						
+		</td>
+	</tr>
+	
+		
+		<tr>
+		<td class="strong" style="text-align: right">
+			Forum kursu na Pegazie:
+		</td>
+		<td class="data" colspan="2">
+				
+																										
+							<a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:katalog2/przedmioty/pokazGrupyZajec%28zaj_cyk_id:255259%29" onclick="return Common.confirmWarnings();">Ćwiczenia - pokaż na stronie grup</a>							<br>
+																																																	<a href="http://pegaz.uj.edu.pl/mod/forum/view.php?f=246554">Forum studenckie</a>
+								(Wykład - grupa nr 1)
+								<br>
+																						<a href="http://pegaz.uj.edu.pl/mod/forum/view.php?f=246553">Forum ogłoszeń</a>
+								(Wykład - grupa nr 1)
+								<br>
+																													
+		</td>
+	</tr>
+	
+			
+
+					<tr class="strong">
+				<td class="strong" style="text-align: right; vertical-align: top">Skrócony opis:</td>
+				<td class="data userhtml" colspan="2">
+					<p style="margin:0px 0px 6px 0px">Automaty skończone i języki 
+regularne. Lemat o pompowaniu dla języków regularnych. Twierdzenie 
+Myhilla-Nerode'a.  Automaty ze stosem i języki bezkontekstowe. 
+Hierarchia Chomsky'ego. Parsowanie Algorytm Cocke-Kasami-Younger. 
+Maszyny Turinga. Problemy nierozstrzygalne. Halting problem. Redukcje. 
+Twierdzenie Rice'a.</p>
+
+				
+			</td></tr>
+							<tr>
+				<td class="strong" style="text-align: right; vertical-align: top">Pełny opis:</td>
+				<td class="data userhtml" colspan="2">
+					<p style="margin:0px 0px 6px 0px">1. Automaty skończone i języki regularne.</p>
+<p style="margin:0px 0px 6px 0px">2. Determinizacja automatów skończonych.</p>
+<p style="margin:0px 0px 6px 0px">3. Lemat o pompowaniu dla języków regularnych.</p>
+<p style="margin:0px 0px 6px 0px">4. Twierdzenie Myhilla-Nerode'a. </p>
+<p style="margin:0px 0px 6px 0px">5. Automaty ze stosem i gramatyki bezkontekstowe.</p>
+<p style="margin:0px 0px 6px 0px">6. Lemat o pompowaniu dla języków bezkontekstowych. </p>
+<p style="margin:0px 0px 6px 0px">7. Deterministyczne automaty ze stosem. Hierarchia Chomsky'ego.</p>
+<p style="margin:0px 0px 6px 0px">8. Parsowanie</p>
+<p style="margin:0px 0px 6px 0px">9. Algorytm Cocke-Kasami-Younger. </p>
+<p style="margin:0px 0px 6px 0px">10. Twierdzenie Chomsky'ego -Schutzenbergera.</p>
+<p style="margin:0px 0px 6px 0px">11. Maszyny Turinga, istnienie maszyny uniwersalnej.</p>
+<p style="margin:0px 0px 6px 0px">12. Inne modele obliczeń: rachunek lambda, rachunek kombinatorów, systemy Posta.</p>
+<p style="margin:0px 0px 6px 0px">13. Problemy nierozstrzygalne. Halting problem. Redukcje.</p>
+<p style="margin:0px 0px 6px 0px">14. Twierdzenie Rice'a.</p>
+<p style="margin:0px 0px 6px 0px">15. Problemy nierozstrzygalne dotyczące języków bezkontekstowych.</p>
+
+				
+			</td></tr>
+							<tr class="strong">
+				<td class="strong" style="text-align: right; vertical-align: top">Literatura:</td>
+				<td class="data userhtml" colspan="2">
+					<p style="margin:0px 0px 6px 0px">Jeffrey D. Ullman,  Rajeev 
+Motwani, John E. Hopcroft.Wprowadzenie do teorii automatów, języków i 
+obliczeń. Wydawnictwo Naukowe PWN, 2005, 478 pp.   </p>
+<p style="margin:20px 0px 6px 0px">Dexter C. Kozen. Automata and Computability (Undergraduate Texts in Computer Science), Springer, 1997, 400 pp.</p>
+
+				
+			</td></tr>
+					</tbody></table>
+
+<div style="margin-top: 20px; color: #888; text-align: center">
+			Opisy przedmiotów w USOS i USOSweb są chronione prawem autorskim.<br>
+		Właścicielem praw autorskich jest Uniwersytet Jagielloński w Krakowie.
+	</div>
+
+</span>                </td>
+            </tr>
+        </tbody></table>
+
+    </div>
+    <div id="layout-footer" class="do_not_print">
+        <table class="s" cellpadding="0" cellspacing="0"><tbody><tr>
+            <td style="white-space: nowrap">
+                USOSweb: Uniwersytecki System Obsługi Studiów
+            </td>
+            <td style="text-align: right; white-space: nowrap">
+                USOSweb 5.3.2.0-
+                                (usosweb04.shadow)                                                ::
+                <a href="https://www.usosweb.uj.edu.pl/kontroler.php?_action=actionx:news/kontakt%28%29" onclick="return Common.confirmWarnings();">kontakt</a>            </td>
+        </tr>
+    </tbody></table>
+
+    
+</div>
+
+
+    
+
+
+</body></html>
